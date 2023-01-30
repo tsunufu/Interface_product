@@ -228,6 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52372674}
   - component: {fileID: 52372675}
+  - component: {fileID: 52372676}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -267,6 +268,21 @@ MonoBehaviour:
   Players:
   - {fileID: 1063367898}
   - {fileID: 1025426267}
+--- !u!114 &52372676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52372673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ad91a0920fe4c2a804576898e409a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayersAttackButton: {fileID: 264159118}
+  PlayersHealButton: {fileID: 872276491}
+  EnemysAttackButton: {fileID: 1846355732}
 --- !u!1 &78586138
 GameObject:
   m_ObjectHideFlags: 0

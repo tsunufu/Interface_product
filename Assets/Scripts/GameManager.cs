@@ -9,12 +9,19 @@ public class GameManager : MonoBehaviour
     // プレイヤー関係のゲームオブジェクトをアタッチする配列
     public GameObject[] Players;
 
+    private int damage;
+
     /// <summary>
     /// Player側の攻撃を行う際に呼び出すメソッド
     /// </summary>
     public void PlayerAttack()
     {
+        var damagetarget = Enemys[Random.Range(0, Enemys.Length)].GetComponent<IDamagable>();
 
+        if (damagetarget != null)
+        {
+            damagetarget.AddDamage(damage);
+        }
     }
 
     /// <summary>
@@ -22,7 +29,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EnemyAttack()
     {
+        var damagetarget = Players[Random.Range(0, Players.Length)].GetComponent<IDamagable>();
 
+        if (damagetarget != null)
+        {
+            damagetarget.AddDamage(damage);
+        }
     }
 
     /// <summary>
@@ -30,6 +42,15 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayerHeal()
     {
+        foreach(GameObject player in Players)
+        {
+            var healtarget = player.GetComponent<IHealable>();
 
+            if (healtarget != null)
+            {
+                healtarget.AddHp(10);
+            }
+
+        }
     }
 }

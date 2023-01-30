@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyWizard : MonoBehaviour
+public class EnemyWizard : MonoBehaviour, IDamagable
 {
     // キャラクターのHPを代入する変数
     public int hp = 100;
     // 残りHPを表示するテキスト
     [SerializeField] Text hpText;
+
+
+    public void AddDamage(int damage)
+    {
+        damage = Random.Range(0, 41);
+        hp -= damage;
+
+        DisplayHpValue();
+    }
 
     /// <summary>
     /// HPの値をHpへ表示するメソッド
